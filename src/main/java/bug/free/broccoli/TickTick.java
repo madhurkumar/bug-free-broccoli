@@ -17,7 +17,7 @@ public class TickTick {
 
 
     public static void main(String[] args) {
-        String time = "3:30";
+        String time = "4:00";
         List<Integer> values = Arrays.stream(time.split(":"))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());

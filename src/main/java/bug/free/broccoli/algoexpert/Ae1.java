@@ -14,7 +14,7 @@ class Ae1 {
         return new int[0];
     }
 
-    // Overkill :)
+    // I know :)
     public static void main(String[] args) {
         System.out.println(
                 Arrays.stream(

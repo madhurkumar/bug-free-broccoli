@@ -12,11 +12,7 @@ public class Ae3 {
     private static int traverse(BST tree, int target, BST nearest) {
         if (tree == null) return nearest != null ? nearest.value : -1;
         if (nearest == null) nearest = tree;
-        else {
-            int nearDiff = nearest.value > target ? nearest.value - target : target - nearest.value;
-            int newDiff = tree.value > target ? tree.value - target : target - tree.value;
-            if (newDiff < nearDiff) nearest = tree;
-        }
+        if (Math.abs(nearest.value - target) > Math.abs(tree.value - target)) nearest = tree;
         return traverse(tree.value > target ? tree.left : tree.right, target, nearest);
     }
 

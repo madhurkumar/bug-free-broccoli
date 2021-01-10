@@ -6,7 +6,6 @@ public class Ae10 {
 
     public static int[] findThreeLargestNumbers(int[] array) {
         int[] result = {-2 ^ 31 - 1, -2 ^ 31 - 1, -2 ^ 31 - 1};
-        int index = 0;
         for (int k : array) {
             if (k >= result[0]) {
                 result[0] = k;

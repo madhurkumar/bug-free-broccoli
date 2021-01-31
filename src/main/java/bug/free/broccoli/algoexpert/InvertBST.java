@@ -42,7 +42,7 @@ public class InvertBST {
         root.left.right.right = new BinaryTree(8);
         root.right.left = new BinaryTree(6);
         inOrder(root);
-        System.out.println("===");
+        System.out.print("=== ");
         invertBinaryTree(root);
         inOrder(root);
     }

@@ -9,6 +9,13 @@ public class MinMaxStackProgram {
         Node(int value) {
             this.value = value;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    '}';
+        }
     }
 
     static class MinMaxStack {
@@ -31,16 +38,15 @@ public class MinMaxStackProgram {
             boolean maxChanged = v == this.max.value;
             if (minChanged || maxChanged) {
                 Node track = this.top;
-                if(minChanged)
+                if (minChanged)
                     this.min = track;
-                if(maxChanged)
+                if (maxChanged)
                     this.max = track;
-                if (track != null)
-                    while (track.next != null) {
-                        if (maxChanged && this.max.value < track.value) this.max = track;
-                        if (minChanged && this.min.value > track.value) this.min = track;
-                        track = track.next;
-                    }
+                while (track != null) {
+                    if (maxChanged && this.max.value < track.value) this.max = track;
+                    if (minChanged && this.min.value > track.value) this.min = track;
+                    track = track.next;
+                }
             }
             return v;
         }
@@ -62,6 +68,15 @@ public class MinMaxStackProgram {
         public int getMax() {
             return this.max == null ? -1 : this.max.value;
         }
+
+        @Override
+        public String toString() {
+            return "MinMaxStack{" +
+                    "top=" + top +
+                    ", max=" + max +
+                    ", min=" + min +
+                    '}';
+        }
     }
 
     public static void main(String[] args) {
@@ -73,45 +88,19 @@ public class MinMaxStackProgram {
         mms.push(8);
         mms.push(3);
         mms.push(9);
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
-        System.out.println(mms.pop());
-        System.out.println(mms.getMin());
-        System.out.println(mms.getMax());
-        System.out.println(mms.peek());
+        System.out.println(mms);
+        mms.pop();
+        System.out.println(mms);
+        mms.pop();
+        System.out.println(mms);
+        mms.pop();
+        System.out.println(mms);
+        mms.pop();
+        System.out.println(mms);
+        mms.pop();
+        System.out.println(mms);
+        mms.pop();
+        System.out.println(mms);
     }
 
 }
